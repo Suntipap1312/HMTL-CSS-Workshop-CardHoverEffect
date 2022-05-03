@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  display: flex;
+  background-color: red;
+  min-height: 120vh;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARD */
+.card {
+  position: relative;
+  background-color: red;
+  width: 25rem;
+  height: 25rem;
+  margin: 20px;
+  border-radius: 20px;
+  transition: 0.5s;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.card:hover {
+  transition-delay: 0s;
+  width: 45rem;
+}
+
+/* .card .circle */
+
+.card .circle {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .circle::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  clip-path: circle(150px at center);
+  border-radius: 20px;
+  transition: 0.5s;
+}
+
+.card:hover .circle::before {
+  clip-path: circle(500px at center);
+  transition: 0.5s;
+}
+
+.card .circle .logo {
+  position: relative;
+  transition: 0.5s;
+  transition-delay: 0.7s;
+  width: 200px;
+}
+
+.card:hover .circle .logo {
+  transition: 0.3s;
+  transform: scale(0);
+}
+
+.content {
+  position: relative;
+  flex-direction: column;
+  display: flex;
+  width: 50%;
+  opacity: 0;
+}
+
+.card:hover .content {
+  opacity: 1;
+  top: -40px;
+  left: 20px;
+}
+
+.content h2 {
+  color: rgba(247, 182, 126, 0.796);
+  transform: uppercase;
+  font-size: 2.5em;
+  padding-bottom: 0.5rem;
+}
+
+.content p {
+  color: black;
+}
+
+.content a {
+  color: black;
+  background-color: bisque;
+  padding: 10px 20px;
+  text-decoration: none;
+
+  margin-top: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+}
+
+.content img {
+  position: absolute;
+  top: 20px;
+  right: -85%;
+
+  transition: 0.5s;
+  transform: scale(0);
+}
+
+.card:hover .content img {
+  transition: 0.5s;
+  transform: scale(1);
+}
